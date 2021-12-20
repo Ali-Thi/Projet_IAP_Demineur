@@ -1,9 +1,8 @@
 #include<iostream>
-#include<string>
 #include"commandes.h"
 #include"lire_coups.h"
 
-bool game_won(){
+bool game_lost(){
     bool is_won = true;
     //saisi du nombre de lignes, de colonnes et de mines
     int nbLignes, nbColonnes, nbMines;
