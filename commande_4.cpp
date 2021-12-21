@@ -3,7 +3,7 @@
 #include"lire_coups.h"
 
 bool game_lost(){
-    bool is_won = true;
+    bool is_lost = true;
     //saisi du nombre de lignes, de colonnes et de mines
     int nbLignes, nbColonnes, nbMines;
     cin >> nbLignes >> nbColonnes >> nbMines;
@@ -19,10 +19,18 @@ bool game_lost(){
     Coups coups;
     for (int i = 0 ; i < nbCoups ; i++){
         lireCoups(coups);
-        for (int j = 0 ; j < nbMines ; j++){
-            if ((coups.index != indexMines[j] && coups.typeCoup == 'M') || (coups.index == indexMines[j] && coups.typeCoup == 'D') )
-                return true;
-        }
+        if (coups.typeCoup == 'M')
+            for (int j = 0 ; j < nbMines ; j++)
+                if (coups.index == indexMines[j]){
+                    is_lost = false;
+                    break;
+                }
+        else if (coups.typeCoup == 'D')
+            for (int j = 0 ; j < nbMines ; j++)
+                if (coups.index == indexMines[j])
+                    is_lost = true;
+                else
+                    is_lost = false;
     }
-    return false;
+    return is_lost;
 }
