@@ -18,17 +18,11 @@ bool game_lost(){
     cin >> nbCoups;
     Coups coups;
     for (int i = 0 ; i < nbCoups ; i++){
-        lireCoups(coups, nbColonnes*nbLignes);
-        if (coups.typeCoup == 'M')
-            for (int j = 0 ; j < nbMines ; j++){
-                if (coups.index == indexMines[j])
-                    indexMines[j] = -1;
-            }
+        lireCoups(coups);
+        for (int j = 0 ; j < nbMines ; j++){
+            if ((coups.index != indexMines[j] && coups.typeCoup == 'M') || (coups.index == indexMines[j] && coups.typeCoup == 'D') )
+                return true;
+        }
     }
-    
-    for (int i = 0 ; i < nbMines ; i++)
-        if (indexMines[i] != -1)
-            return false;
-    return true;
-
+    return false;
 }

@@ -1,5 +1,5 @@
-#ifndef COMMANDES
-#define COMMANDES
+#ifndef LIRE_COUPS
+#define LIRE_COUPS
 
 using namespace std;
 

@@ -15,6 +15,12 @@ int main(){
                 else
                     cout << "game not won";
                 break;
+            case 4 :
+                if (game_lost()) 
+                    cout << "game lost"; 
+                else
+                    cout << "game not lost";
+                break;
         }
     }
 }

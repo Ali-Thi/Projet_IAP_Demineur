@@ -19,7 +19,7 @@ bool game_won(){
     cin >> nbCoups;
     Coups coups;
     for (int i = 0 ; i < nbCoups ; i++){
-        lireCoups(coups, nbColonnes*nbLignes);
+        lireCoups(coups);
         if (coups.typeCoup == 'M')
             for (int j = 0 ; j < nbMines ; j++){
                 if (coups.index == indexMines[j])
