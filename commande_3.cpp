@@ -1,3 +1,10 @@
+/**
+@file : commande_3.cpp
+Projet : minesweeper
+@author : TALHAOUI Ali 
+@version : 1 21/12/21
+@brief : fonction d'evaluation de la reussite d'une partie
+*/
 #include<iostream>
 #include<string>
 #include"commandes.h"

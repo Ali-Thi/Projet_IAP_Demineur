@@ -1,3 +1,10 @@
+/**
+@file : commandes.h
+Projet : minesweeper
+@author : TALHAOUI Ali 
+@version : 1 21/12/21
+@brief : fonctions de creation ou d'interpretation d'une partie de demineur
+*/
 #ifndef COMMANDES
 #define COMMANDES
 

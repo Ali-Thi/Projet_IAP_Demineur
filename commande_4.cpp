@@ -1,3 +1,10 @@
+/**
+@file : commande_4.cpp
+Projet : minesweeper
+@author : TALHAOUI Ali 
+@version : 1 21/12/21
+@brief : fonction d'evaluation de l'echec de la partie
+*/
 #include<iostream>
 #include"commandes.h"
 #include"lire_coups.h"

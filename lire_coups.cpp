@@ -1,3 +1,10 @@
+/**
+@file : lire_coups.cpp
+Projet : minesweeper
+@author : TALHAOUI Ali 
+@version : 1 21/12/21
+@brief : fonction d'interpretation d'un coups entre par l'utilisateur
+*/
 #include<iostream>
 #include"commandes.h"
 #include"lire_coups.h"

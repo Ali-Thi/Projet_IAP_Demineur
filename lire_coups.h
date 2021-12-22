@@ -1,3 +1,10 @@
+/**
+@file : lire_coups.h
+Projet : minesweeper
+@author : TALHAOUI Ali 
+@version : 1 21/12/21
+@brief : fonction d'interpretation d'un coups entre par l'utilisateur
+*/
 #ifndef LIRE_COUPS
 #define LIRE_COUPS
 
