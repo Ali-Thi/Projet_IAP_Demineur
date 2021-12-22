@@ -2,6 +2,10 @@
 #include"commandes.h"
 #include"lire_coups.h"
 
+/**
+@brief : indique si la partie est parti ou encore en cours
+@return : un booléen
+*/
 bool game_lost(){
     //saisi du nombre de lignes, de colonnes et de mines
     int nbLignes, nbColonnes, nbMines;
@@ -12,9 +16,11 @@ bool game_lost(){
     for (int i = 0 ; i < nbMines ; i++)
         cin >> indexMines[i];
     
-    //saisi de l'historique des coups
+    //saisi du nombre de coups
     int nbCoups;
     cin >> nbCoups;
+
+    //test d'échec
     Coups coups;
     for (int i = 0 ; i < nbCoups ; i++){
         lireCoups(coups);

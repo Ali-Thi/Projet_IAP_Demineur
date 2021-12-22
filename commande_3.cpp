@@ -3,6 +3,10 @@
 #include"commandes.h"
 #include"lire_coups.h"
 
+/**
+@brief : renvoie un booleen pour indiquer si la partie est gagné ou toujours en cours
+@return : un booleen
+*/
 bool game_won(){
     bool is_won = true;
     //saisi du nombre de lignes, de colonnes et de mines
@@ -14,9 +18,11 @@ bool game_won(){
     for (int i = 0 ; i < nbMines ; i++)
         cin >> indexMines[i];
     
-    //saisi de l'historique des coups
+    //saisi du nombre de coups des coups
     int nbCoups;
     cin >> nbCoups;
+
+    //saisi des mines marquées
     Coups coups;
     for (int i = 0 ; i < nbCoups ; i++){
         lireCoups(coups);
@@ -27,6 +33,7 @@ bool game_won(){
             }
     }
     
+    //test de victoire
     for (int i = 0 ; i < nbMines ; i++)
         if (indexMines[i] != -1)
             return false;
