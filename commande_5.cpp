@@ -10,10 +10,9 @@ Projet : minesweeper
 
 /**
 @brief : trouve une case a demasquer ou affiche une erreur si elle n'en troupe pas
-@return : l'index d'une case
+@return : l'index d'une case 
 */
 int find_move(){
-    assert(game_won);
     //saisi du nombre de lignes et de colonnes
     int nbLignes, nbColonnes;
     cin >> nbLignes >> nbColonnes;

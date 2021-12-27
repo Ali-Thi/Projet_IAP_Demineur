@@ -5,7 +5,10 @@ int main(){
     int commande;
     cin >> commande;
 
-    if (commande == 3){
+    if (commande == 1)
+        make_problem();
+
+    else if (commande == 3){
         if (game_won())
             cout << "game won"; 
         else

@@ -9,6 +9,10 @@ Projet : minesweeper
 #define COMMANDES
 
 using namespace std;
+bool is_contain_in_tab(int element, int tab[], int sizeTab);
+
+
+void make_problem();
 
 /**
 @brief : renvoie un booleen pour indiquer si la partie est gagné ou toujours en cours
