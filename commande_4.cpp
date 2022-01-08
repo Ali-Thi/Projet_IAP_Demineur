@@ -18,7 +18,7 @@ bool game_lost(){
     int nbLignes, nbColonnes, nbMines;
     cin >> nbLignes >> nbColonnes >> nbMines;
 
-    //saisi des emplacement des mines
+    //saisi des emplacements des mines
     int indexMines[nbMines];
     for (int i = 0 ; i < nbMines ; i++)
         cin >> indexMines[i];
