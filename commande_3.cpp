@@ -11,7 +11,7 @@ Projet : minesweeper
 #include"lire_coups.h"
 
 /**
-@brief : renvoie un booleen pour indiquer si la partie est gagné ou toujours en cours
+@brief : renvoie un booleen pour indiquer si la partie est gagnée ou toujours en cours
 @return : un booleen
 */
 bool game_won(){
