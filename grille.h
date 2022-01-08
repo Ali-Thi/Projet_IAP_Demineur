@@ -25,7 +25,7 @@ struct Grille{
 void init_grille(Grille* grille, const int nbLignes, const int nbColonnes);
 
 /**
-@brief : initialise les valeursdes cases d'une grille
+@brief : initialise les valeurs des cases d'une grille
 @param [in, out] grille : la grille
 @param [in] indexMines : tableau contenant les index des mines
 @param [in] nbMines : le nombre de mines
