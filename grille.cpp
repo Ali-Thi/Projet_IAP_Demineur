@@ -16,13 +16,13 @@ void init_grille(Grille* grille, const int nbLignes, const int nbColonnes){
 }
 
 /**
-@brief : initialise les valeursdes cases d'une grille
+@brief : initialise les valeurs des cases d'une grille
 @param [in, out] grille : la grille
 @param [in] indexMines : tableau contenant les index des mines
 @param [in] nbMines : le nombre de mines
 */
 void init_cases(Grille* grille, int indexMines[], int nbMines){
-    //initialisation des valeurs par défauts des cases
+    //initialisation des valeurs par défaut des cases
     for (int i = 0 ; i < grille->nbLignes ; i++){
         for (int j = 0 ; j < grille->nbColonnes ; j++){
             grille->cases[i][j].estMine = false;
