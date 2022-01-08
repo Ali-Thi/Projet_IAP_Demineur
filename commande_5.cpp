@@ -9,7 +9,7 @@ Projet : minesweeper
 #include"commandes.h"
 
 /**
-@brief : trouve une case a demasquer ou affiche une erreur si elle n'en troupe pas
+@brief : trouve une case a demasquer ou affiche une erreur si elle n'en trouve pas
 @return : l'index d'une case 
 */
 int find_move(){
@@ -17,7 +17,7 @@ int find_move(){
     int nbLignes, nbColonnes;
     cin >> nbLignes >> nbColonnes;
     
-    //trouve un case non demasquee
+    //trouve une case non demasquee
     char cara = ' ';
     int i = 0;
     while (cara != '.'){
