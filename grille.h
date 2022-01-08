@@ -11,6 +11,7 @@ struct Case{
 };
 
 struct Grille{
+    Case** cases;
     int nbLignes;
     int nbColonnes;
 };

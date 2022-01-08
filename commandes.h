@@ -14,6 +14,8 @@ bool is_contain_in_tab(int element, int tab[], int sizeTab);
 
 void make_problem();
 
+void print_grille();
+
 /**
 @brief : renvoie un booleen pour indiquer si la partie est gagné ou toujours en cours
 @return : un booleen

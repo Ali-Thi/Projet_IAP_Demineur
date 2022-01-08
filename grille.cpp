@@ -25,35 +25,40 @@ void init_cases(Grille* grille, int indexMines[], int nbMines){
     //initialisation des valeurs par défauts des cases
     for (int i = 0 ; i < grille->nbLignes ; i++){
         for (int j = 0 ; j < grille->nbColonnes ; j++){
-            grille->cases[i*grille->nbColonnes+j].estMine = false;
-            grille->cases[i*grille->nbColonnes+j].estDecouvert = false;
-            grille->cases[i*grille->nbColonnes+j].estMarquee = false;
-            grille->cases[i*grille->nbColonnes+j].nbMinesEnvironnantes = 0;
+            grille->cases[i][j].estMine = false;
+            grille->cases[i][j].estDecouvert = false;
+            grille->cases[i][j].estMarquee = false;
+            grille->cases[i][j].nbMinesEnvironnantes = 0;
         }
     }
-
+    cout << "1\n";
     //initialisation des cases contenant des mines
     for (int i = 0 ; i < nbMines ; i++)
-        grille->cases[indexMines[i]].estMine = true;
-
+        cout << indexMines[i]/grille->nbLignes;
+        grille->cases[indexMines[i]/grille->nbLignes][indexMines[i]%grille->nbLignes].estMine = true;
+    cout << "1\n";
     //initialisations des cases autour des mines
-    for (int i = 0 ; i < grille->nbLignes*grille->nbColonnes ; i++){
-        if (grille->cases[i].estMine){
-            if (i >= grille->nbColonnes)
-                grille->cases[i-grille->nbColonnes-1].nbMinesEnvironnantes++;
-                grille->cases[i-grille->nbColonnes].nbMinesEnvironnantes++;
-                grille->cases[i-grille->nbColonnes+1].nbMinesEnvironnantes++;
-            if (i < grille->nbColonnes*(grille->nbLignes-1)-1)
-                grille->cases[i+grille->nbColonnes-1].nbMinesEnvironnantes++;
-                grille->cases[i+grille->nbColonnes].nbMinesEnvironnantes++;
-                grille->cases[i+grille->nbColonnes+1].nbMinesEnvironnantes++;
-            if (i % grille->nbColonnes != 0)
-                grille->cases[i-1].nbMinesEnvironnantes++;
+    for (int i = 0 ; i < grille->nbLignes ; i++){
+        for (int j = 0 ; j < grille->nbColonnes ; j++){
+            if (grille->cases[i][j].estMine){
+                if (i > 0)
+                    grille->cases[i-1][j].nbMinesEnvironnantes++;
+                
+                if (i < grille->nbLignes)
+                    grille->cases[i+1][j].nbMinesEnvironnantes++;
+                
+                if (j > 0){
+                    grille->cases[i-1][j-1].nbMinesEnvironnantes++;
+                    grille->cases[i][j-1].nbMinesEnvironnantes++;
+                    grille->cases[i+1][j-1].nbMinesEnvironnantes++;
+                }
 
-            if (i % (grille->nbColonnes-1) != 0 && i != 0)
-                grille->cases[i+1].nbMinesEnvironnantes++;
-
-            if (i >= grille->nbColonnes && (i % grille->nbColonnes != 0)
+                if (j < grille->nbColonnes){
+                    grille->cases[i-1][j+1].nbMinesEnvironnantes++;
+                    grille->cases[i][j+1].nbMinesEnvironnantes++;
+                    grille->cases[i+1][j+1].nbMinesEnvironnantes++;
+                }
+            }
         }
     }
 
@@ -64,22 +69,26 @@ int main(){
     int nbLignes = 4, nbColonnes = 6;
     int indexMines[] = {1, 5, 12, 7, 19};
     init_grille(&grille, nbLignes, nbColonnes);
-    /*init_cases(&grille, indexMines, 4);
+    cout << "1\n";
+    init_cases(&grille, indexMines, 5);
+    cout << "1\n";
     for (int i = 0 ; i < nbLignes ; i++){
-        for(int k = 0 ; k < nbColonnes ; k++)
-            cout << " ___";
-        cout << '\n';
-        for(int j = 0 ; j < nbColonnes ; j++){
-            cout << "| ";
-            if (grille.cases[i*nbColonnes+j].estMine)
-                cout << "M ";
-            else if (grille.cases[i*nbColonnes+j].nbMinesEnvironnantes == 0)
-                cout << "  ";
-            else
-                cout << grille.cases[i*nbColonnes+j].nbMinesEnvironnantes << " ";
+        for (int j = 0 ; j < nbColonnes ; j++){
+            for(int k = 0 ; k < nbColonnes ; k++)
+                cout << " ___";
+            cout << '\n';
+            for(int l = 0 ; l < nbColonnes ; l++){
+                cout << "| ";
+                if (grille.cases[i][j].estMine)
+                    cout << "M ";
+                else if (grille.cases[i][j].nbMinesEnvironnantes == 0)
+                    cout << "  ";
+                else
+                    cout << grille.cases[i][j].nbMinesEnvironnantes << " ";
+            }
+            cout << "|\n";
         }
-        cout << "|\n";
     }
-    for(int k = 0 ; k < nbColonnes ; k++)
-        cout << " ___";*/
+    for(int i = 0 ; i < nbColonnes ; i++)
+        cout << " ___";
 }

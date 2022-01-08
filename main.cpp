@@ -8,6 +8,9 @@ int main(){
     if (commande == 1)
         make_problem();
 
+    else if (commande == 2)
+        print_grille();
+
     else if (commande == 3){
         if (game_won())
             cout << "game won"; 
