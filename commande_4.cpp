@@ -10,7 +10,7 @@ Projet : minesweeper
 #include"lire_coups.h"
 
 /**
-@brief : indique si la partie est parti ou encore en cours
+@brief : indique si la partie est perdue ou encore en cours
 @return : un booléen
 */
 bool game_lost(){
