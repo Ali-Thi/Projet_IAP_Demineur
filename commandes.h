@@ -17,13 +17,13 @@ void make_problem();
 void print_grille();
 
 /**
-@brief : renvoie un booleen pour indiquer si la partie est gagné ou toujours en cours
+@brief : renvoie un booleen pour indiquer si la partie est gagnée ou toujours en cours
 @return : un booleen
 */
 bool game_won();
 
 /**
-@brief : indique si la partie est parti ou encore en cours
+@brief : indique si la partie est perdue ou encore en cours
 @return : un booléen
 */
 bool game_lost();
